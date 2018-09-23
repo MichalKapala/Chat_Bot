@@ -1,0 +1,251 @@
+<ProfilLabel@Label>:
+    font_size: 22
+    multiline: True
+    halign: 'left'
+    valign: 'top'
+    text_size: self.size
+    markup: True
+    font_name: 'modern'
+
+
+<MainView>:
+    canvas.before:
+        Rectangle:
+            size: self.size
+            pos: self.pos
+            source: 'Grafika/tlo2.png'
+        Rectangle:
+            size: self.width, self.height
+            pos: 0, 0
+            size: self.width, root.height * 0.101
+        Color:
+            rgba: 0, 0, 0, 1
+    ImageButton:
+        pos: root.width-self.width, 0
+        source: 'menu.png'
+        size_hint: 0.15, 0.10
+        on_press: root.zmiana()
+
+    ImageButton:
+        size_hint: 0.15, 0.09
+        source: 'Grafika/send.png'
+        pos: root.width - 2*self.width, -0.5
+        on_press: root.click()
+
+<MenuScreen>:
+    canvas.before:
+        Rectangle:
+            size: self.size
+            pos: self.pos
+            source: 'Grafika/tlom2.png'
+    BoxLayout:
+        orientation: 'vertical'
+        size_hint_y: 0.55
+        size_hint_x: 0.8
+        pos: root.width/10, root.height * 0.09
+        ImageButton:
+            source: 'Grafika/button.png'
+            width: root.width
+            on_press: root.manager.current = 'chat'
+        ImageButton:
+            source: 'Grafika/button2.png'
+            on_press: root.manager.current= 'profile'
+        ImageButton:
+            source: 'Grafika/button3.png'
+            on_press: root.manager.current= 'date'
+        ImageButton:
+            source: 'Grafika/button4.png'
+            on_press: root.manager.current= 'contact'
+
+
+<DateScreen>:
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'Grafika/tlo2.png'
+        Rectangle:
+            size: self.width, self.height
+            pos: 0, 0
+            size: self.width, root.height * 0.09
+
+    FloatLayout:
+        Label:
+            text: 'Tu jest miejsce na terminy'
+
+        ImageButton:
+            pos: root.width-self.width, -0.5
+            source: 'menu.png'
+            size_hint: 0.2, 0.09
+            on_press: root.manager.current= 'menu'
+
+<ProfileScreen>:
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'Grafika/tlo3.png'
+        Rectangle:
+            size: self.width, self.height
+            pos: 0, 0
+            size: self.width, root.height * 0.09
+
+    ImageButton:
+        pos: root.width-self.width, -0.5
+        source: 'menu.png'
+        size_hint: 0.2, 0.09
+        on_press: root.manager.current= 'menu'
+
+<Profile>
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'Grafika/tlop.png'
+        Color:
+            rgba:1,1,1,1
+        Rectangle:
+            size: self.width, self.height
+            pos: 0, 0
+            size: self.width, root.height * 0.09
+
+    ImageButton:
+        pos: root.width-self.width, -0.5
+        source: 'menu.png'
+        size_hint: 0.2, 0.09
+        on_press: root.manager.current= 'menu'
+
+    ScrollView:
+        size_hint: 1, 0.91
+        y: root.height * 0.09
+
+        BoxLayout:
+            orientation: 'vertical'
+            text_size: self.width-20, None
+            size_hint: 1, 2
+            pos: root.pos
+
+            ProfilLabel:
+                canvas.before:
+                    Color:
+                        rgba: 0,0 ,0 ,0.85
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                text_size: self.size
+                font_size: 38
+                valign: 'top'
+                halign: 'center'
+                text: '[b]'+"Nazwa Profilu"+'[b]'
+                size_hint: 1, 0.15
+
+            ProfilLabel:
+                canvas.before:
+                    Color:
+                        rgba: 0,0 ,0 ,0.3
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                text_size: self.size
+                font_size: 28
+                valign: 'top'
+                halign: 'center'
+                text: '[b]'+"Przedmioty roszerzone"+'[b]'
+                size_hint: 1, 0.15
+
+            ProfilLabel:
+                canvas.before:
+                    Color:
+                        rgba: 0,0 ,0 ,0.3
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin lacinia nibh volutpat orci vehicula iaculis. Ut scelerisque tortor at metus auctor sollicitudin. Pellentesque vel tempus diam, eget lacinia orci. Sed sed enim consectetur, facilisis lacus eget, volutpat erat. Aliquam erat volutpat. Etiam elit augue, tristique in urna vel, rhoncus facilisis nisi. Proin sit amet quam nec ligula imperdiet consectetur. Vestibulum facilisis, nunc at ullamcorper egestas, risus erat mollis enim, et ornare tellus neque ac mauris. Donec sed pulvinar purus, vel vehicula massa. Nam vehicula, velit id scelerisque lacinia, nisl sem rutrum nisi, eget varius ante dolor nec justo. Curabitur vel justo aliquet, dignissim sem a, sagittis eros"
+
+            ProfilLabel:
+                canvas.before:
+                    Color:
+                        rgba: 1,0 ,0 ,0.3
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                text_size: self.size
+                font_size: 28
+                valign: 'top'
+                halign: 'center'
+                text: '[b]'+"Jezyki obce"+'[b]'
+                size_hint: 1, 0.15
+
+            ProfilLabel:
+                canvas.before:
+                    Color:
+                        rgba: 1,0 ,0 ,0.3
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin lacinia nibh volutpat orci vehicula iaculis. Ut scelerisque tortor at metus auctor sollicitudin. Pellentesque vel tempus diam, eget lacinia orci. Sed sed enim consectetur, facilisis lacus eget, volutpat erat. Aliquam erat volutpat. Etiam elit augue, tristique in urna vel, rhoncus facilisis nisi. Proin sit amet quam nec ligula imperdiet consectetur. Vestibulum facilisis, nunc at ullamcorper egestas, risus erat mollis enim, et ornare tellus neque ac mauris. Donec sed pulvinar purus, vel vehicula massa. Nam vehicula, velit id scelerisque lacinia, nisl sem rutrum nisi, eget varius ante dolor nec justo. Curabitur vel justo aliquet, dignissim sem a, sagittis eros"
+
+            ProfilLabel:
+                canvas.before:
+                    Color:
+                        rgba: 0.7,0.1 ,0.1 ,0.3
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                text_size: self.size
+                font_size: 28
+                valign: 'top'
+                halign: 'center'
+                text: '[b]'+"Charakterystyka Klasy"+'[b]'
+                size_hint: 1, 0.15
+
+            ProfilLabel:
+                canvas.before:
+                    Color:
+                        rgba: 0.7,0.1 ,0.1 ,0.3
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin lacinia nibh volutpat orci vehicula iaculis. Ut scelerisque tortor at metus auctor sollicitudin. Pellentesque vel tempus diam, eget lacinia orci. Sed sed enim consectetur, facilisis lacus eget, volutpat erat. Aliquam erat volutpat. Etiam elit augue, tristique in urna vel, rhoncus facilisis nisi. Proin sit amet quam nec ligula imperdiet consectetur. Vestibulum facilisis, nunc at ullamcorper egestas, risus erat mollis enim, et ornare tellus neque ac mauris. Donec sed pulvinar purus, vel vehicula massa. Nam vehicula, velit id scelerisque lacinia, nisl sem rutrum nisi, eget varius ante dolor nec justo. Curabitur vel justo aliquet, dignissim sem a, sagittis eros"
+
+
+<ContactScreen>:
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'Grafika/tlo2.png'
+        Rectangle:
+            size: self.width, self.height
+            pos: 0, 0
+            size: self.width, root.height * 0.09
+
+
+    Label:
+        text: 'Tu jest miejsce na kontakt'
+    ImageButton:
+        pos: root.width-self.width, -0.5
+        source: 'menu.png'
+        size_hint: 0.2, 0.09
+        on_press: root.manager.current= 'menu'
+
+
+<List>:
+    top: 10
+    pos: 0, 60
+    row_height: 50
+    size_hint_min: 40, 40
+    size: 450, 500
+
+<CustomLabel>:
+    font_size:20
+    color:1,1,1,1
+    text_size: self.width-20, None
+    text: "Witam"
+
+
+<Input>:
+    pos: 0, 0
+    size_hint: 0.70, 0.10
+    multiline: False
+

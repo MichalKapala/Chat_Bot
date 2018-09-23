@@ -1,0 +1,11 @@
+I SILNIK BOTA:
++ Rozró¿nianie pytania od stwierdzenia
+- Pewnosæ odpowiedzi
+
+II INTERFEJS:
+- Focus na tekœcie po wys³aniu odpowiedzi
+- Uniwersalnoœæ na androida
+
+III DANE:
+- Doprecyzowaæ dane 
+- 
